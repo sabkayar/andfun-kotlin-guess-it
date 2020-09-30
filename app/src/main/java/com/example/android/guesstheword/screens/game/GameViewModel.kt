@@ -33,18 +33,16 @@ class GameViewModel : ViewModel() {
     // The list of words - the front of the list is the next word to guess
     private lateinit var wordList: MutableList<String>
 
-    // TODO (06) Once you've copied over the variables and methods, remove any code referring back
+    // DONE (06) Once you've copied over the variables and methods, remove any code referring back
     // to the GameFragment. You can also clean up the log statements from the last step.
 
     init {
         resetList()
         nextWord()
-        Log.i("GameViewModel", "GameViewModel created!")
     }
 
     override fun onCleared() {
         super.onCleared()
-        Log.i("GameViewModel", "GameViewModel destroyed!")
     }
 
     /**

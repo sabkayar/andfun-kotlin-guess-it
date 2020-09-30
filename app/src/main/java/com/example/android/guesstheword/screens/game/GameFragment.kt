@@ -52,7 +52,6 @@ class GameFragment : Fragment() {
         )
 
         // Get the viewmodel
-        Log.i("GameFragment", "Called ViewModelProvider")
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
         // DONE (03) Move over this initialization to the GameViewModel
