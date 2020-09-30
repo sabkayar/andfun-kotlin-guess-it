@@ -38,7 +38,7 @@ class GameViewModel : ViewModel() {
 
         // This is the total time of the game
 
-        private const val COUNTDOWN_TIME = 10000L
+        private const val COUNTDOWN_TIME = 60000L
 
     }
     // DONE (01) Copy over the provided companion object with the timer constants
@@ -84,10 +84,11 @@ class GameViewModel : ViewModel() {
         countDownTimer = object : CountDownTimer(COUNTDOWN_TIME, ONE_SECOND) {
 
             override fun onTick(millisUntilFinished: Long) {
-                _currentTime.value = millisUntilFinished
+                _currentTime.value = millisUntilFinished / ONE_SECOND
             }
 
             override fun onFinish() {
+                _currentTime.value = DONE
                 _eventGameFinish.value = true
             }
         }
